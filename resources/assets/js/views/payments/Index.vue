@@ -8,6 +8,7 @@
             slot="item-title"
             to="dashboard">
             {{ $t('general.home') }}
+  
           </router-link>
         </li>
         <li class="breadcrumb-item">
@@ -36,11 +37,20 @@
           <base-button
             color="theme"
             icon="plus"
-            size="large"
+            size="small"
           >
             {{ $t('payments.add_payment') }}
           </base-button>
         </router-link>
+        <div slot="item-title" class="col-xs-2">
+          <base-button
+            color="theme"
+            size="small"
+            @click="onClickRedirect()"
+          >
+            international payment
+          </base-button>
+        </div>
       </div>
     </div>
 
@@ -293,6 +303,7 @@ export default {
       deep: true
     }
   },
+  
   mounted () {
     this.fetchCustomers()
   },
@@ -313,6 +324,9 @@ export default {
     ...mapActions('customer', [
       'fetchCustomers'
     ]),
+    onClickRedirect: function () {   
+          window.open("https://google.com", "_blank");    
+      },
     async fetchData ({ page, filter, sort }) {
       let data = {
         customer_id: this.filters.customer !== null ? this.filters.customer.id : '',
