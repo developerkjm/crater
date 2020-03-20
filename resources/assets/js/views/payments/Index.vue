@@ -42,7 +42,7 @@
             {{ $t('payments.add_payment') }}
           </base-button>
         </router-link>
-        <div slot="item-title" class="col-xs-2">
+       <!--<div slot="item-title" class="col-xs-2">
           <base-button
             color="theme"
             size="small"
@@ -50,7 +50,16 @@
           >
             international payment
           </base-button>
-        </div>
+        </div>-->
+        <router-link slot="item-title" class="col-xs-2" to="stripe">
+          <base-button
+            color="theme"
+            icon="plus"
+            size="small"
+          >
+            Payment
+          </base-button>
+        </router-link>
       </div>
     </div>
 
@@ -324,9 +333,9 @@ export default {
     ...mapActions('customer', [
       'fetchCustomers'
     ]),
-    onClickRedirect: function () {   
+    /*onClickRedirect: function () {   
           window.open("https://google.com", "_blank");    
-      },
+      },*/
     async fetchData ({ page, filter, sort }) {
       let data = {
         customer_id: this.filters.customer !== null ? this.filters.customer.id : '',

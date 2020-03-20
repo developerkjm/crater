@@ -78,6 +78,9 @@ import UpdateApp from './views/settings/UpdateApp.vue'
 
 import Wizard from './views/wizard/Index.vue'
 
+// Stripe
+import Stripe from './views/stripe/Index.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -357,6 +360,13 @@ const routes = [
             component: UpdateApp
           }
         ]
+      },
+
+      //Stripe
+      {
+        path: 'stripe',
+        name: 'stripe.index',
+        component: Stripe
       }
     ]
   },
