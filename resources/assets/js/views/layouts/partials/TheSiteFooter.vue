@@ -3,7 +3,7 @@
     <div class="text-right">
       {{ $t('general.powered_by') }}
       <a
-        href="http://bytefury.com/"
+        href="http://mxftc.com/"
         target="_blank">{{ $t('general.bytefury') }}
       </a>
     </div>
